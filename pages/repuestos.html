@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <link rel="icon" href="../img/logo.png">
+    <link rel="stylesheet" href="../css/repuestos.css"/>
+    <title>Repuestos</title>
+</head>
+
+<body>
+    <a href="https://wa.me/5493751446284" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header>
+        <div class="logo-menu">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../img/logo.png" alt="Logo">
+                </a>
+            </div>
+            <button id="abrir" class="abrir"> Abrir</button>
+            <nav class="nav" id="nav">
+                <button id="cerrar" class="cerrar" style="display: none;"> Cerrar</button>
+                <ul class="menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../index.html">Contacto</a></li>
+                    <li><a href="../index.html">Sobre nosotros</a></li>
+                    <li><a href="../index.html">Ubicación</a></li>
+                    <li class="especial"><a href="">Iniciar Sesion</a></li>
+                    <li class="especial"><a href="">Configuracion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<!--
+    <section class="oferta">
+        <h2>Ofertas</h2>
+            
+    </section>
+-->
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="search">
+                <input type="text" placeholder="Buscar productos">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="filter">
+                <h3>Filtrar por precio</h3>
+                <div class="price-range">
+                    <input type="range" min="0" max="10000" value="5000" step="100" id="price-slider" oninput="updatePrice(this.value)">
+                    <div class="price-display">
+                        <span id="price-value">$5000</span>
+                    </div>
+                </div>
+                <div class="filtrar">
+                    <button class="filter-btn">Filtrar</button>
+                </div>
+            </div>
+            <div class="categories">
+                <h3>CATEGORIAS</h3>
+                <ul>
+                    <li>Cubiertas y Cámaras</li>
+                    <li>Aceites y Lubricantes</li>
+                    <li>Bujías</li>
+                    <li>Lámparas</li>
+                    <li>Kit de Transmisión</li>
+                    <li>Faroles</li>
+                    <li>Juegos de Espejos</li>
+                    <li>Tableros</li>
+                    <li>Cascos</li>
+                    <li>Guardabarros</li>
+                    <li>Manubrios</li>
+                    <li>Tanques de Combustible</li>
+                    <li>Baterías</li>
+                    <li>Patadas de Arranque</li>
+                    <li>Palanca de Cambio</li>
+                    <li>Juego de Juntas Motor</li>
+                    <li>Kit de Pistón y Aros</li>
+                    <li>Cilindros</li>
+                    <li>Fundas de Asiento</li>
+                    <li>Filtros de Aceite y de Aire</li>
+                    <li>Regulador de Voltaje</li>
+                    <li>CDI</li>
+                    <li>Estatores</li>
+                    <li>Carburadores</li>
+                    <li>Zapatas de Freno</li>
+                    <li>Pastillas de Freno</li>
+                    <li>Cadenas de Distribución y Tensores</li>
+                    <li>Aro de Llantas</li>
+                    <li>Cables de Freno y Embrague</li>
+                    <li>Cables de Velocímetros y Acelerador</li>
+                    <li>Accesorios</li>
+                </ul>
+            </div>
+            <div class="marcas">
+                <h3>MARCAS</h3>
+                <ul>
+                    <li>Rinaldi</li>
+                    <li>Pirelli</li>
+                    <li>Young Xing</li>
+                    <li>Tough</li>
+                    <li>Cros Land</li>
+                    <li>Shell</li>
+                    <li>Gulf</li>
+                    <li>AMA</li>
+                    <li>Bardhall</li>
+                    <li>Motul</li>
+                    <li>Yamalube</li>
+                    <li>NGK</li>
+                    <li>Hada</li>
+                    <li>Champion</li>
+                    <li>Max</li>
+                    <li>Forte</li>
+                    <li>Catalano</li>
+                    <li>Rifrfel</li>
+                    <li>Yazumi</li>
+                    <li>H5</li>
+                    <li>Vertigo</li>
+                    <li>CID Bravo</li>
+                    <li>Splendor</li>
+                    <li>CID Abierto</li>
+                    <li>Protork</li>
+                    <li>ZPF</li>
+                    <li>Yamasida</li>
+                    <li>TKR</li>
+                    <li>KIM</li>
+                </ul>
+            </div>
+            <div class="envio">
+                <h3>COSTO DE ENVÍO</h3>
+                <ul>
+                    <li>Cubiertas y Cámaras</li>
+                    <li>Aceites y Lubricantes</li>
+                </ul>
+            </div>
+            <div class="cuotas">
+                <h3>CUOTAS</h3>
+                <ul>
+                    <li>Cubiertas y Cámaras</li>
+                    <li>Aceites y Lubricantes</li>
+                </ul>
+            </div>
+            <div class="descuentos">
+                <h3>DESCUENTOS</h3>
+                <ul>
+                    <li>Cubiertas y Cámaras</li>
+                    <li>Aceites y Lubricantes</li>
+                </ul>
+            </div>
+        </aside>
+
+        <div class="texto">
+            <div class="textoo">
+            <p>Mostrar 1 - 9 de 10 productos</p>
+            </div>
+
+            <div class="cuadros">
+                <div class="fotos">
+                    <a href=""> 
+                        <img src="/img/repuestos/rueda.png" alt="">
+                        <h2>Cubiertas y Cámaras</h2>
+                        <p>£12.00</p>
+                    </a>
+                    <a href="">
+                        <img src="/img/repuestos/aceite.png" alt="">
+                        <h2>Aceites y Lubricantes</h2>
+                        <p>£12.00</p>
+                    </a>
+                    <a href="">
+                        <img src="/img/repuestos/bujia.png" alt="">
+                        <h2>Bujías</h2>
+                        <p>£12.00</p>
+                    </a>
+                    <a href=""> 
+                        <img src="/img/repuestos/lampara.png" alt="">
+                        <h2>Lámparas</h2>
+                        <p>£12.00</p>
+                    </a>
+                </div>
+                <div class="fotos1">
+                    <a href=""> 
+                        <img src="/img/repuestos/farol.png" alt="">
+                        <h2>Faroles</h2>
+                        <p>£12.00</p>
+                    </a>
+                    <a href=""> 
+                        <img src="/img/repuestos/espejo.png" alt="">
+                        <h2>Juegos de Espejos</h2>
+                        <p>£12.00</p>
+                    </a>
+                    <a href=""> 
+                        <img src="/img/repuestos/tablero.png" alt="">
+                        <h2>Tableros</h2>
+                        <p>£12.00</p>
+                    </a>
+                    <a href=""> 
+                        <img src="/img/repuestos/casco.png" alt="">
+                        <h2>Cascos</h2>
+                        <p>£12.00</p>
+                    </a>
+                </div>  
+                <div class="fotos2">
+                    <a href=""> 
+                        <img src="/img/repuestos/manubrio.png" alt="">
+                        <h2>Manubrios</h2>
+                        <p>£12.00</p>
+                    </a>
+                    <a href=""> 
+                        <img src="/img/repuestos/tanque.png" alt="">
+                        <h2>Tanques de Combustibles</h2>
+                        <p>£12.00</p>
+                    </a>
+                    <a href=""> 
+                        <img src="/img/repuestos/bateria.png" alt="">
+                        <h2>Baterías</h2>
+                        <p>£12.00</p>
+                    </a>
+                    <a href=""> 
+                        <img src="/img/repuestos/patada.png" alt="">
+                        <h2>Patadas de Arranque</h2>
+                        <p>£12.00</p>
+                    </a>
+                </div>
+                <div class="fotos3">
+                    <a href=""> 
+                        <img src="/img/repuestos/juntas.png" alt="">
+                        <h2>Juego de Juntas Motor</h2>
+                        <p>£12.00</p>
+                    </a>
+                    <a href=""> 
+                        <img src="/img/repuestos/piston.png" alt="">
+                        <h2>Kit de Pistón y Aros</h2>
+                        <p>£12.00</p>
+                    </a>
+                    <a href=""> 
+                        <img src="/img/repuestos/cilindro.png" alt="">
+                        <h2>Cilindros</h2>
+                        <p>£12.00</p>
+                    </a>
+                    <a href=""> 
+                        <img src="/img/repuestos/funda.png" alt="">
+                        <h2>Fundas de Asiento</h2>
+                        <p>£12.00</p>
+                    </a>
+                </div>  
+                <div class="fotos4">
+                    <a href=""> 
+                        <img src="/img/repuestos/regulador.png" alt="">
+                        <h2>Regulador de Voltaje</h2>
+                        <p>£12.00</p>
+                    </a>
+                    <a href=""> 
+                        <img src="/img/repuestos/cdi.png" alt="">
+                        <h2>CDI o Caja Negra</h2>
+                        <p>£12.00</p>
+                    </a>
+                    <a href=""> 
+                        <img src="/img/repuestos/estator.png" alt="">
+                        <h2>Estatores</h2>
+                        <p>£12.00</p>
+                    </a>
+                    <a href=""> 
+                        <img src="/img/repuestos/carburador.png" alt="">
+                        <h2>Carburadores</h2>
+                        <p>£12.00</p>
+                    </a>
+                </div>  
+                <div class="fotos5">
+                    <a href=""> 
+                        <img src="/img/repuestos/pastilla.png" alt="">
+                        <h2>Pastillas de Freno</h2>
+                        <p>£12.00</p>
+                    </a>
+                    <a href=""> 
+                        <img src="/img/repuestos/cadena.png" alt="">
+                        <h2>Cadenas de Distribución</h2>
+                        <p>£12.00</p>
+                    </a>
+                    <a href=""> 
+                        <img src="/img/repuestos/aro.png" alt="">
+                        <h2>Aro de Llantas</h2>
+                        <p>£12.00</p>
+                    </a>
+                    <a href=""> 
+                        <img src="/img/repuestos/accesorio.png" alt="">
+                        <h2>Accesorios</h2>
+                        <p>£12.00</p>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p class="empresa-nombre"><strong>Freddy Motos</strong></p>
+        <div class="footer-content">
+            <div class="fila">
+                <a href="https://wa.me/5493751446284" target="_blank">
+                    <i class="fab fa-whatsapp"></i>WhatsApp
+                </a>
+                <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=DmwnWsmHbnNpMxRHxnzZsLdRkbSggsxdVmZxSdFMGPnFhnNLFwlvnVgNgsgvRsdWVGPWLmSLMgHQ">
+                    <i class="correo"></i> Correo
+                </a>
+            </div>
+            <div class="fila">
+                <a href="https://www.instagram.com/freddy.motos/">
+                    <i class="fab fa-instagram"></i>Instagram
+                </a>
+                <a href="https://www.google.com/maps/place/Fredy+Motos/@-26.40856,-54.6033626,17z/data=!3m1!4b1!4m6!3m5!1s0x94f76dfcf232f83f:0x3c9070e7ccc10719!8m2!3d-26.40856!4d-54.6007823!16s%2Fg%2F11hzxj7pf4?entry=ttu&g_ep=EgoyMDI0MDkyMi4wIKXMDSoASAFQAw%3D%3D">
+                    <i class="ubi"></i> Ubicación
+                </a>
+            </div>
+            <p class="empresa-descripcion">Repuestos, Accesorios y Service de Motos</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+
+</body>
+</html>
